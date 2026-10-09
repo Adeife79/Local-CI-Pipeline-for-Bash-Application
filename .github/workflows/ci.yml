@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches:
+    branches: 
       - main
   workflow_dispatch:
 
@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Validate Bash scripts
         run: bash scripts/lint.sh
 
@@ -21,6 +22,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Run application tests
         run: bash tests/test.sh
 
@@ -30,5 +32,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Build image and run smoke tests
         run: bash scripts/build.sh
